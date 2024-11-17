@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Carga</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #9D00E5;
+        }
+        .loader-container {
+            display: flex;
+            flex-direction: column; /* Alinear elementos en columna */
+            align-items: center; /* Centrar elementos horizontalmente */
+            text-align: center; /* Centrar texto */
+        }
+        .loader {
+            border: 16px solid #8E00DF; 
+            border-top: 16px solid #FFA500; 
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-text {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #FC9200;
+        }
+        .logo {
+            width: 150px; /* Ancho de la imagen */
+            height: auto; /* Altura automática para mantener la proporción */
+            margin-top: 10px; /* Espacio superior para separar la imagen del texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader"></div>
+        <div class="loading-text"><strong>Cargando, por favor espera... <br> Si deseas volver da click al logo de la UNAB</strong><br><img src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo" class="logo"></div>
+    </div>
+
+    <script>
+        // Espera 5 segundos antes de redirigir a otra página
+        setTimeout(function() {
+            window.location.href = 'Principal.html'; // Cambia esto a la URL deseada
+        }, 5000); // 5000 milisegundos = 5 segundos
+    </script>
+</body>
+</html>

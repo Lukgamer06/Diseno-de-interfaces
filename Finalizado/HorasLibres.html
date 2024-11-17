@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas Libres</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            background-position: center;
+            color: white;
+        }
+        .navbar {
+            background-color: #9D00E5;
+            color: white;
+            padding: 15px;
+            height: 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo{
+            width: auto;
+            height: 50px;
+        }
+        .logout-button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: 2%;
+        }
+        .personal-button{
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 70%;
+        }
+        .cuadrado {
+            width: 90%; /* Ancho del cuadrado */
+            height: auto; /* Alto del cuadrado */
+            background-color: white; /* Color de fondo del cuadrado */
+            border: 5px solid  #FFA500; /* Color y grosor del borde */
+            border-radius: 15px;
+            display: flex; /* Habilitar flexbox */
+            align-items: center; /* Centrar verticalmente */
+            margin-top: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px; /* Espaciado interno */
+        }
+        .text-section {
+            flex: 1; /* Ocupa el espacio restante */
+            color: black;
+            margin-right: 20px; /* Espacio entre texto e imagen */
+        }
+        .image-section img {
+            width: 200px; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo" class="logo" onclick="location.href='Principal.html'">
+        <button class="personal-button" onclick="location.href='infopersonal.html'">Informacion <br> Personal</button>
+        <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    <div class="cuadrado">
+        <div class="text-section">
+            <h1 style="color: #FFA500; margin-left: 10px;">Informacion Sobre La Carrera Del Usuario</h1>
+            <h3 style="color: black;margin-left: 10px;">
+                <br>
+                Nombre: Usuario
+                <br><br>
+                Horas Libres: 14 Horas Libres (El dato se puede cambiar o actualizar)
+                <br><br>
+                Carrera: Ingenieria de Sistemas
+                <br><br>
+                Creditos: 16 (El dato se puede cambiar o actualizar)
+            </h3>
+        </div>
+        <div class="image-section">
+            <img src="https://unabvirtual.unab.edu.co/produccion/derechodeautor/images/buho.png" alt="Imagen del Usuario">
+        </div>
+    </div>
+    <script src="CerrarSesion.js"></script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificar Profesores</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            background-position: center;
+            color: white;
+        }
+        .navbar {
+            background-color: #9D00E5;
+            color: white;
+            padding: 15px;
+            height: 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo{
+            width: auto;
+            height: 50px;
+        }
+        .logout-button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: 2%;
+        }
+        .personal-button{
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 70%;
+        }
+        .volver-button{
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 0%;
+        }
+        .cuadrado-busqueda{
+            margin-top: 7%;
+            width: 100%; /* Ancho del cuadrado */
+            height: auto;
+            background-color: rgba(0, 0, 0, 0); /* Color de fondo del cuadrado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Espaciado interno */
+        }
+        .campo{
+            align-items: center;
+            width: 50%; /* Ancho del campo */
+            padding: 10px; /* Espaciado interno */
+            border: 1px solid #ccc; /* Borde del campo */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+        }
+        .buscar-button{
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5%;
+        }
+        .cuadro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .nombre {
+            font-size: 18px;
+            color: black;
+        }
+        .estrellas {
+            cursor: pointer;
+        }
+        .estrella {
+            font-size: 24px;
+            color: #FFD700; /* Color dorado para las estrellas */
+        }
+        .estrella-vacia {
+            color: #ccc; /* Color gris para estrellas vacías */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo" class="logo" onclick="location.href='Principal.html'">
+        <button class="personal-button" onclick="location.href='infopersonal.html'">Informacion <br> Personal</button>
+        <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button> onclick="alert('Cerrando Sesión'); window.location.href='MenuAcceso.html'">Cerrar Sesión</button>
+    </div>
+    <div class="cuadrado-busqueda">
+        <input type="text" class="campo" placeholder="Buscar Profesores">
+        <button class="buscar-button">Buscar</button>
+    </div>
+
+
+    <h1>Calificar Profesores</h1>
+
+    <div class="cuadro">
+        <div class="nombre">Julian Santoyo Diaz</div>
+        <div class="estrellas" onclick="calificar(this, 1)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+
+    <div class="cuadro">
+        <div class="nombre">Andrea Jimenez Chaparro</div>
+        <div class="estrellas" onclick="calificar(this, 2)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+
+    <div class="cuadro">
+        <div class="nombre">Leidy Gonzalez Cely</div>
+        <div class="estrellas" onclick="calificar(this, 3)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+
+    <div class="cuadro">
+        <div class="nombre">Martha Curcio Borrero</div>
+        <div class="estrellas" onclick="calificar(this, 4)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+    
+    <div class="cuadro">
+        <div class="nombre">Antonio Faustino Muñoz</div>
+        <div class="estrellas" onclick="calificar(this, 5)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+
+    <div class="cuadro">
+        <div class="nombre">Miguel Cadena</div>
+        <div class="estrellas" onclick="calificar(this, 6)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+
+    <div class="cuadro">
+        <div class="nombre">Astrid Liliana</div>
+        <div class="estrellas" onclick="calificar(this, 7)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+
+
+    <div class="cuadro">
+        <div class="nombre">Fabian Suarez</div>
+        <div class="estrellas" onclick="calificar(this, 8)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+    
+    <div class="cuadro">
+        <div class="nombre">Giovanni Rincon</div>
+        <div class="estrellas" onclick="calificar(this, 9)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+    
+    <div class="cuadro">
+        <div class="nombre">Leonardo Prado</div>
+        <div class="estrellas" onclick="calificar(this, 10)">
+            <span class="estrella" data-value="1">★</span>
+            <span class="estrella" data-value="2">★</span>
+            <span class="estrella" data-value="3">★</span>
+            <span class="estrella" data-value="4">★</span>
+            <span class="estrella" data-value="5">★</span>
+        </div>
+    </div>
+    <script>
+        function calificar(element, profesorId) {
+            const estrellas = element.querySelectorAll('.estrella');
+            estrellas.forEach(estrella => {
+                estrella.classList.remove('estrella-vacia');
+                estrella.classList.add('estrella-vacia');
+            });
+
+            const valorSeleccionado = event.target.dataset.value;
+            for (let i = 0; i < valorSeleccionado; i++) {
+                estrellas[i].classList.remove('estrella-vacia');
+            }
+        }
+    </script>
+</body>
+</html>

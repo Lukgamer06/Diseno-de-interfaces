@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .navbar {
+            background-color: #9D00E5;
+            color: white;
+            padding: 15px;
+            height: 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo{
+            width: auto;
+            height: 50px;
+        }
+        .logout-button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: 2%;
+        }
+        .logout-button:hover{
+            background-color: #FC9200;
+        }
+        .personal-button{
+                background-color: #FFA500;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-left: 70%;
+        }
+        .personal-button:hover{
+            background-color: #FC9200;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            height: 50px;
+            width: 10%;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .event {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #ffcc66;
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .nav-link {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .header{
+            text-align: center;
+            display: inline;
+        }
+        .calendar-button{
+            display: inline-block;
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .calendar-button:hover{
+            background-color: #FC9200;
+        }
+        .calendar-buttons{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo" class="logo" onclick="location.href='Principal.html'">
+        <button class="personal-button" onclick="location.href='infopersonal.html'">Informacion <br> Personal</button>
+        <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+
+    <div class="calendar">
+        <div class="header">
+            <h2 style="color: #FC9200;">
+                <strong>Tablero de Eventos</strong>
+            </h2>
+            <div class="calendar-buttons">
+                <button class="calendar-button"> <- septiembre</button>
+                <button class="calendar-button">noviembre -></button>
+            </div>
+        </div>
+            <div class="month">
+            <h3 style="text-align: center;"><strong>Octubre 2024</strong></h3>
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mié</th>
+                        <th>Jue</th>
+                        <th>Vie</th>
+                        <th>Sáb</th>
+                        <th>Dom</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>
+                        4
+                        <div class="event">
+                            <span class="event-title">Evento 1</span>
+                            <span class="event-icon">•</span>
+                        </div>
+                    </td>
+                    <td>
+                        5
+                        <div class="event">
+                            <span class="event-title">Evento 2</span>
+                            <span class="event-icon">•</span>
+                        </div>
+                    </td>
+                    <td>6</td>
+                    </tr>
+                    <tr>
+                    <td>7</td>
+                    <td>
+                        8
+                        <div class="event">
+                            <span class="event-title">Evento 3</span>
+                            <span class="event-icon">•</span>
+                        </div>
+                        </td>
+                        <td>
+                        9
+                        <div class="event">
+                            <span class="event-title">Charla 1</span>
+                            <span class="event-icon">•</span>
+                        </div>
+                        </td>
+                        <td>
+                        10
+                        <div class="event">
+                            <span class="event-title">Charla 2</span>
+                            <span class="event-icon">•</span>
+                        </td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        </tr>
+                        <tr>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>
+                            18
+                            <div class="event">
+                                <span class="event-title">Evento 4</span>
+                                <span class="event-icon">•</span>
+                        </td>
+                        <td>
+                            19
+                            <div class="event">
+                                <span class="event-title">Charla 3</span>
+                                <span class="event-icon">•</span>
+                        </td>
+                        <td>
+                            20
+                            <div class="event">
+                                <span class="event-title">Evento 5</span>
+                                <span class="event-icon">•</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+    </div>
+    <script src="CerrarSesion.js"></script>
+</body>
+</html>

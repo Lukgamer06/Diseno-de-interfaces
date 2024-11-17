@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://unired.edu.co/images/instituciones/UNAB/2017/junio/unab.jpg');
+            background-size: cover;
+            flex-direction: column;
+        }
+        .cuadrado {
+            width: 400px; /* Ancho del cuadrado */
+            background-color: rgba(0, 0, 0, 0); /* Color de fondo del cuadrado */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Espaciado interno */ 
+        }
+        .campo {
+            width: 100%; /* Ancho del campo */
+            margin: 10px 0; /* Espaciado entre campos */
+            padding: 10px; /* Espaciado interno */
+            border: 1px solid #ccc; /* Borde del campo */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+        }
+        .boton1 {
+            width: 100%; /* Ancho del botón */
+            padding: 10px; /* Espaciado interno del botón */
+            margin-top: 10px; /* Espaciado superior */
+            font-size: 18px; /* Tamaño de fuente */
+            background-color: #FFA500; /* Color de fondo del botón */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        .boton1:hover {
+            background-color: #FC9200; /* Color al pasar el mouse */
+        }
+        .boton2 {
+            width: 100%; /* Ancho del botón */
+            padding: 10px; /* Espaciado interno del botón */
+            margin-top: 10px; /* Espaciado superior */
+            font-size: 18px; /* Tamaño de fuente */
+            background-color: #9D00E5; /* Color de fondo del botón */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        .boton2:hover {
+        background-color: #8E00DF; /* Color al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: white;">Registrarse</h2>
+    <form>
+        <div class="cuadrado">
+            <label for="nombre"></label>
+            <input type="text" class="campo" id="nombre" placeholder="Nombre" required>
+            <label for="apellido"></label>
+            <input type="text" class="campo" id="apellido" placeholder="Apellido" required>
+            <label for="nacimiento"></label>
+            <input type="date" class="campo" id="nacimiento" placeholder="Fecha de Nacimiento" required>
+            <label for="email"></label>
+            <input type="email" class="campo" id="email" placeholder="Correo Electronico" required>
+            
+            <select id="facultad" class="campo" required>
+                <option value="">Seleccionar Facultad</option>
+                <option value="ingenieria">Facultad de Ingeniería</option>
+                <option value="economia">Facultad de Economía y Negocios</option>
+                <option value="artes">Facultad de Ciencias Sociales, Humanidades y Artes</option>
+                <option value="politica">Facultad de Ciencias Jurídicas y Politicas</option>
+                <option value="salud">Facultad de Ciencias de la Salud</option>
+            </select>
+            <label for="facultad"></label>
+            
+            <select id="carrera" class="campo" required>
+                <option value="">Seleccionar Carrera</option>
+            </select>
+            <label for="carrera"></label>
+            
+            <label for="Usuario"></label>
+            <input type="text" class="campo" id="Usuario" placeholder="Usuario" required>
+            <label for="password"></label>
+            <input type="password" id="password" class="campo" placeholder="Contraseña" required>
+            <label for="repeat-password"></label>
+            <input type="password" id="repeat-password" class="campo" placeholder="Repetir Contraseña" required>
+
+            <button type="submit" class="boton1" id="submit">Enviar</button>
+        </form>
+            <button class="boton2"onclick="location.href='MenuAcceso.html'">Volver</button>
+        </div>
+
+    <script>
+        const facultadSelect = document.getElementById('facultad');
+        const carreraSelect = document.getElementById('carrera');
+        facultadSelect.addEventListener('change', () => {
+            const facultad = facultadSelect.value;
+            const carreras = {
+                'ingenieria': [
+                    'Ingeniería Biomédica',
+                    'Ingeniería de Sistemas',
+                    'Ingeniería en Energía y Sostenibilidad',
+                    'Ingeniería Financiera',
+                    'Ingeniería Industrial',
+                    'Ingeniería Mecatronica',
+                ],
+                'economia': [
+                    'Administración de Empresas',
+                    'Contaduría Pública',
+                    'Economía',
+                    'Marketing',
+                    'Negocios Internacionales'
+                ],
+                'artes':[
+                    'Artes Audiovisuales',
+                    'Comunicación Social',
+                    'Gastronomía y Alta Cocina',
+                    'Licenciatura en Educacion Infantil',
+                    'Musica',
+                    'Preparatorio en Estudios Musicales'
+                ],
+                'politica':[
+                    'Derecho'
+                ],
+                'salud':[
+                    'Enfermería',
+                    'Medicina',
+                    'Psicologia'
+                ]
+            };
+            carreraSelect.innerHTML = '<option value="">Seleccionar Carrera</option>';
+            carreras[facultad].forEach(carrera => {
+                const option = document.createElement('option');
+                option.value = carrera;
+                option.textContent = carrera;
+                carreraSelect.appendChild(option);
+            });
+        });
+        
+        function register() {
+            const username = document.getElementById("Usuario").value;
+            const password = document.getElementById("password").value;
+            const repassword = document.getElementById("repeat-password").value;
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const nacimiento = document.getElementById('nacimiento').value;
+            const correo = document.getElementById("email").value;
+            const facultad1 = document.getElementById('facultad').value;
+            const carrera1 = document.getElementById('carrera').value;
+            const contraseña = document.getElementById("password").value;
+        
+            const Datos = {
+                Nombre: nombre,
+                Apellido: apellido,
+                Nacimiento: nacimiento,
+                Correo: correo,
+                Facultad: facultad1,
+                Carrera: carrera1,
+                Password: contraseña
+            }
+            if (repassword===password){
+                // Verificar si ya existe un usuario con ese nombre
+                if (localStorage.getItem(username)) {
+                    alert("El usuario ya existe. Intente con otro nombre de usuario.");
+                } else {
+                    // Guardar la información del usuario en localStorage
+                    localStorage.setItem(username, JSON.stringify(Datos));
+                    alert("Registro exitoso. Ahora puedes iniciar sesión.");
+                    window.location.href="MenuAcceso.html";
+                }
+            } else {
+                alert("Las contraseñas no coinciden.");
+            }
+        }
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            register()
+        });
+
+    </script>
+</body>
+</html>
+</html>

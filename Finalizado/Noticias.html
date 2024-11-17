@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            background-position: center;
+            color: white;
+        }
+        .navbar {
+            background-color: #9D00E5;
+            color: white;
+            padding: 15px;
+            height: 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo{
+            width: auto;
+            height: 50px;
+        }
+        .logout-button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: 2%;
+        }
+        .personal-button{
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 70%;
+        }
+        .cuadrado{
+            margin-top: 7%;
+            width: 100%; /* Ancho del cuadrado */
+            height: auto;
+            background-color: rgba(0, 0, 0, 0); /* Color de fondo del cuadrado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Espaciado interno */
+        }
+        .campo{
+            align-items: center;
+            width: 50%; /* Ancho del campo */
+            padding: 10px; /* Espaciado interno */
+            border: 1px solid #ccc; /* Borde del campo */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+        }
+        .buscar-button{
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 5%;
+        }
+        .table{
+            width: 100%;
+            margin-top: 20px;
+            color: black;
+        }
+        .noticias{
+            width: 90%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo" class="logo" onclick="location.href='Principal.html'">
+        <button class="personal-button" onclick="location.href='infopersonal.html'">Informacion <br> Personal</button>
+        <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    
+    <div class="cuadrado">
+        <input type="text" class="campo" placeholder="Buscar Noticias">
+        <button class="buscar-button">Buscar</button>
+    </div>
+    <table class="table">
+        <tr>
+            <td><div class="noticias">
+                <h2>Noticia 1</h2>
+                <br>
+                <p>Este es el contenido de la noticia 1</p>
+                <br>
+            </div></td>
+            <td><div class="noticias">
+                <h2>Noticia 2</h2>
+                <br>
+                <p>Este es el contenido de la noticia 2</p>
+                <br>
+            </div></td>
+            <td><div class="noticias">
+                <h2>Noticia 3</h2>
+                <br>
+                <p>Este es el contenido de la noticia 3</p>
+                <br>
+            </div></td>
+        </tr>
+        <tr>
+            <td><div class="noticias">
+                <h2>Noticia 4</h2>
+                <br>
+                <p>Este es el contenido de la noticia 4</p>
+                <br>
+            </div></td>
+            <td><div class="noticias">
+                <h2>Noticia 5</h2>
+                <br>
+                <p>Este es el contenido de la noticia 5</p>
+                <br>
+            </div></td>
+            <td><div class="noticias">
+                <h2>Noticia 6</h2>
+                <br>
+                <p>Este es el contenido de la noticia 6</p>
+                <br>
+            </div></td>
+        </tr>
+        <tr>
+    </table>
+    <script src="CerrarSesion.js"></script>
+</body>
+</html>

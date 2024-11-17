@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajeria</title>
+    <link rel="stylesheet" href="Foros.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo" class="logo" onclick="location.href='Principal.html'">
+        <button class="personal-button" onclick="location.href='infopersonal.html'">Informacion <br> Personal</button>
+        <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    <div class="cuadrado">
+        <div class="chat-container">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Contactos</h2>
+                </div>
+                <div class="sidebar-search">
+                    <input type="text" placeholder="Buscar contactos...">
+                </div>
+                <div class="sidebar-contacts">
+                    <div class="contact">
+                        <div class="contact-name">Contacto 1</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 2</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 3</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 4</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 5</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 6</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 7</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 8</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 9</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 10</div>
+                    </div>
+                    <div class="contact">
+                        <div class="contact-name">Contacto 11</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-area">
+                <div class="chat-header">
+                    <h2>Contacto 1</h2>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message sender">
+                        <p>Hola, ¿cómo estás?</p>
+                    </div>
+                    <div class="message receiver">
+                        <p>¡Hola! Estoy bien, gracias.</p>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <input type="text" id="message-input" placeholder="Escribe un mensaje...">
+                    <button id="send-button">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="Foros.js"></script>
+<script src="CerrarSesion.js"></script>
+</body>
+</html>

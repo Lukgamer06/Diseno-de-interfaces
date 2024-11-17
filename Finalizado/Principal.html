@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://unab.edu.co/wp-content/uploads/2022/01/1.-Edificio-Armando-Puyana-Puyana.jpg'); /* Cambia esto por la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        }
+        .navbar {
+            background-color: #9D00E5;
+            color: white;
+            padding: 15px;
+            height: 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo{
+            width: auto;
+            height: 50px;
+        }
+        .logout-button {
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: 2%;
+        }
+        .personal-button{
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 70%;
+        }
+        .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px; /* Para que no se superponga con la barra de navegación */
+        min-height: calc(100vh - 70px); /* Asegura que el contenedor ocupe el espacio restante de la ventana */
+        }
+        .options-arriba {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 100%; /* Asegúrate de que ocupen todo el ancho */
+        }
+        .options-abajo{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 100%; /* Asegúrate de que ocupen todo el ancho */
+        }
+        .option {
+        background-color: rgba(252, 147, 0, 0.5);
+        margin: 10px;
+        border-radius: 10px;
+        width: 30%;
+        height: 290px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s;
+        font-size: 50px;
+        }
+        .option:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo" class="logo" onclick="location.href='Principal.html'">
+        <button class="personal-button" onclick="location.href='infopersonal.html'">Informacion <br> Personal</button>
+        <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    <div class="container">
+        <div class="options-arriba">
+            <div class="option" onclick="location.href='Eventos.html'">Eventos</div>
+            <div class="option" onclick="location.href='Noticias.html'">Noticias</div>
+            <div class="option" onclick="location.href='Foros.html'">Mensajes</div>
+        </div>
+        <div class="options-abajo">
+            <div class="option" onclick="location.href='Calificar.html'">Calificar<br>Profesores</div>
+            <div class="option" onclick="location.href='HorasLibres.html'">Horas<br>Libres</div>
+        </div>
+    </div>
+    <script src="CerrarSesion.js"></script>
+</body>
+</html>

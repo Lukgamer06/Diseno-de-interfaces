@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Registro</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Cambia a columna para alinear la imagen y el cuadrado */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://unired.edu.co/images/instituciones/UNAB/2017/junio/unab.jpg');
+            background-size: cover;
+        }
+        .Logo {
+            max-width: 90%; /* Máximo ancho de la imagen */
+            max-height: 90%; /* Máximo alto de la imagen */
+            object-fit: contain; /* Mantiene la relación de aspecto */
+            margin-bottom: 20px; /* Espacio entre la imagen y el cuadrado */
+        }
+        .cuadrado {
+            width: 700px; /* Ancho del cuadrado */
+            height: 500px; /* Alto del cuadrado */
+            background-color: rgb(0, 0, 0, 0); /* Color de fondo del cuadrado */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .boton {
+            width: 80%; /* Ancho del botón */
+            padding: 10px; /* Espaciado interno del botón */
+            margin: 10px; /* Espaciado entre botones */
+            font-size: 18px; /* Tamaño de fuente */
+            background-color: #FFAE00; /* Color de fondo del botón */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        .boton:hover {
+            background-color: #FB9000; /* Color al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <img class="Logo" src="https://unab.edu.co/wp-content/uploads/2023/09/logo-universidad-unab.png" alt="Logo Universidad UNAB">
+    <div class="cuadrado">
+        <button class="boton" onclick="location.href='Registro.html'">Registrarse</button>
+        <button class="boton" onclick="location.href='Ingreso.html'">Acceder</button>
+        <button class="boton" onclick="location.href='RecuperarCuenta.html'">Recuperar cuenta</button>
+    </div>
+</body>
+</html>

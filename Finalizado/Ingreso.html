@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://unired.edu.co/images/instituciones/UNAB/2017/junio/unab.jpg');
+            background-size: cover;
+            flex-direction: column; /* Añadido para apilar el h1 y el cuadrado */
+        }
+        h1 {
+            text-align: center; /* Centra el texto horizontalmente */
+            margin-bottom: 20px; /* Espacio entre el título y el cuadrado */
+            color: white; /* Color del texto (opcional) */
+        }
+        .cuadrado {
+            width: 400px; /* Ancho del cuadrado */
+            background-color: rgb(0,0,0,0); /* Color de fondo del cuadrado */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Espaciado interno */
+        }
+        .campo {
+            width: 100%; /* Ancho del campo */
+            margin: 10px 0; /* Espaciado entre campos */
+            padding: 10px; /* Espaciado interno */
+            border: 1px solid #ccc; /* Borde del campo */
+            border-radius: 5px; /* Bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+        }
+        .boton1 {
+            width: 100%; /* Ancho del botón */
+            padding: 10px; /* Espaciado interno del botón */
+            margin-top: 10px; /* Espaciado superior */
+            font-size: 18px; /* Tamaño de fuente */
+            background-color: #FFA500; /* Color de fondo del botón */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        .boton1:hover {
+            background-color: #FC9200; /* Color al pasar el mouse */
+        }
+        .boton2 {
+            width: 100%; /* Ancho del botón */
+            padding: 10px; /* Espaciado interno del botón */
+            margin-top: 10px; /* Espaciado superior */
+            font-size: 18px; /* Tamaño de fuente */
+            background-color: #9D00E5; /* Color de fondo del botón */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cambiar cursor al pasar por encima */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+        .boton2:hover {
+        background-color: #8E00DF; /* Color al pasar el mouse */
+        }
+        .mostrar-contraseña {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Acceder</h1>
+        <div class="cuadrado">
+            <label for="Usuario"></label>
+            <input type="text" id="Usuario" class="campo" placeholder="Usuario" required>
+            <label for="contraseña"></label>
+            <input type="password" id="contraseña" class="campo" placeholder="Contraseña" required>
+            
+            <div class="mostrar-contraseña">
+                <input type="checkbox" id="mostrar" onclick="togglePasswordVisibility()"/>
+                <label for="mostrar"><strong>Mostrar Contraseña</strong></label>
+            </div>
+            
+            <button type="submit" class="boton1" id="submit">Ingresar</button>
+            <button type="button" class="boton2" onclick="location.href='MenuAcceso.html'">Volver</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
